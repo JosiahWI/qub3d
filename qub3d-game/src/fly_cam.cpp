@@ -60,6 +60,7 @@ glm::mat4 FlyCamera::calculateViewMatrix() const
 
 const float MOUSE_SENSITIVITY = 0.075f;
 const float MOVE_SPEED = 8.f;
+const glm::vec3 M_STATIC_UP = {0, 1, 0};
 
 void FlyCamera::tick(float dt)
 {
@@ -108,8 +109,8 @@ void FlyCamera::tick(float dt)
 		m_position -= right * dt * MOVE_SPEED;
 	
 	if (keys[SDL_SCANCODE_SPACE])
-		m_position += m_up * dt * MOVE_SPEED;
+		m_position += M_STATIC_UP * dt * MOVE_SPEED;
 	
 	if (keys[SDL_SCANCODE_E])
-		m_position -= m_up * dt * MOVE_SPEED;
+		m_position -= M_STATIC_UP * dt * MOVE_SPEED;
 }
