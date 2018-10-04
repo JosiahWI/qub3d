@@ -106,4 +106,10 @@ void FlyCamera::tick(float dt)
 
 	if (keys[SDL_SCANCODE_A])
 		m_position -= right * dt * MOVE_SPEED;
+	
+	if (keys[SDL_SCANCODE_SPACE])
+		m_position += m_up * dt * MOVE_SPEED;
+	
+	if (keys[SDL_SCANCODE_E])
+		m_position -= m_up * dt * MOVE_SPEED;
 }
